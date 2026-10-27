@@ -1,5 +1,56 @@
+:root {
+  --bg: #0a0a0f;
+  --card: #0f1016;
+  --line: #1f2a2a;
+  --text: #e6e8f0;
+  --muted: #9aa0b4;
+  --green: #00ff9c;
+  --mono: "JetBrains Mono", monospace;
+  --sans: "Inter", sans-serif;
+}
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+}
+.App {
+  max-width: 1440px;
+  margin: 0px auto;
+}
+.header {
+  width: 100%;
+  position: static;
+  top: 0;
+  height: auto;
+  border: 1px solid var(--green);
+  padding: 1.2rem;
+}
+.header > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h4 {
+  color: var(--green);
+}
+.header ul li {
+  display: inline;
+}
+.header ul li:not(:last-child)::after {
+  content: "";
+  margin: 0 0.5rem;
+}
+.header ul li a:hover {
+  color: var(--green);
+}
+.header li a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.header:has(h4, a) {
+  font-family: var(--mono);
 }
