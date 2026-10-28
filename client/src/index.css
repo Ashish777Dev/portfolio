@@ -22,7 +22,9 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
+  min-height: 100vh;
 }
+
 .header {
   width: 100%;
   position: static;
@@ -56,7 +58,49 @@ body {
 .header:has(h4, a) {
   font-family: var(--mono);
 }
+/* hamburger-menu style */
 
+.hamburger-menu {
+  width: 44px;
+  height: 44px;
+  /* border: 1px solid var(--green); */
+  padding: 0.3rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.hamburger-menu span,
+.hamburger-menu span::before,
+.hamburger-menu span::after {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 0.2rem;
+  background-color: var(--green);
+  position: relative;
+  transition: 0.4s all ease-in-out;
+}
+.hamburger-menu span::before,
+.hamburger-menu span::after {
+  position: absolute;
+  content: "";
+}
+.hamburger-menu span::before {
+  top: 10px;
+}
+.hamburger-menu span::after {
+  top: -10px;
+}
+.hamburger-menu.toggle span::before {
+  transform: translateY(-10px) rotate(405deg);
+}
+.hamburger-menu.toggle span::after {
+  transform: translateY(10px) rotate(-405deg);
+}
+.hamburger-menu.toggle span {
+  background-color: transparent;
+}
 /* HERO STYLE */
 .hero {
   font-family: var(--mono);
@@ -117,4 +161,33 @@ p {
 
 .btn:hover {
   box-shadow: 0 0 16px rgba(0, 255, 156, 0.35);
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    padding: 0px 10px;
+  }
+  .header {
+    border: 1px solid var(--green);
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    height: 44px;
+    overflow: hidden;
+    transition: 0.4s all ease-in-out;
+  }
+  nav.toggle {
+    height: 150px;
+  }
+  nav .links {
+    flex-basis: 100%;
+  }
+  nav .links li {
+    display: block;
+    margin: 0.6rem 0;
+  }
 }
