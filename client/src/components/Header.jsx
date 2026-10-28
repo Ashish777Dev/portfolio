@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="header">
       <nav className={`${open ? " toggle" : ""}`}>
-        <h4>~/[ Portfolio ]</h4>
+        <h4>~/[ root@ashish ]</h4>
         <div
           className={`${open ? "hamburger-menu toggle" : "hamburger-menu"}`}
           onClick={() => setOpen(!open)}
