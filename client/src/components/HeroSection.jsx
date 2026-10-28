@@ -3,7 +3,8 @@ const HeroSection = () => {
     <section className="hero" id="top">
       <div className="prompt">$ whoami</div>
       <h1>
-        &gt; Hi, I&apos;m [Ashish Vasava].
+        &gt; Hi, I&apos;m{" "}
+        <span style={{ whiteSpace: "nowrap" }}>[Ashish Vasava]</span>.
         <br />
         <span className="green">I build things that work.</span>
       </h1>
